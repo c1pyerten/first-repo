@@ -578,3 +578,10 @@ remote branch name as: remote/[branch]
 
 - git push origin serverfix:  git push origin serverfix: serverfix :  **serverfix spread to : refs/heads/serverfix:refs/heads/serverfix**
 - - git push [remote-name] [local-branch]: [remote-branch]
+
+
+
+----
+notes from home
+
+- git branch -a
