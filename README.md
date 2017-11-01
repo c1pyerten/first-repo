@@ -554,7 +554,7 @@ A pointer called HEAD pointing at branches
 ## merge
 two merging ways:
 1. **fast-forward merge** , direct point master to [branch]
-2. **diverged from common ancestor merge**, auto make a new commit 
+2. **diverged from common ancestor merge**, merging will make a new commit 
 
 - git merge [branch]: merge current-branch to [branch]
 - git add conflict-file: mark file as conflict solved
@@ -566,7 +566,8 @@ two merging ways:
 - git branch -v: every branch's last commit
 - git branch -r: list remote branch
 - git branch -d [branch]: delete branch
-- git branch --merged, git branch --no-merged
+- git branch --merged, git branch --no-merged: show merged and unmerged branches
+- **git branch -vv: branches with its tracking remote-branch**
 
 
 ## remote branch
@@ -578,3 +579,47 @@ remote branch name as: remote/[branch]
 
 - git push origin serverfix:  git push origin serverfix: serverfix :  **serverfix spread to : refs/heads/serverfix:refs/heads/serverfix**
 - - git push [remote-name] [local-branch]: [remote-branch]
+
+## **tracking branch**
+
+tracking-branch is local-branches which is related to remote-branch
+
+- when clone a repo, by default master -> origin/master
+- git checkout -b [my-branch] [remote]/[branch]:  create new branch and tracks a remote
+- git checkout --track [remote]/[branch]: almost the same as above, but will only create new branch named [branch]
+- git branch -u [remote]/[branch] OR git branch --set-upstream-to [remote]/[branch]  :set local branch to track remote branch, or to change tracked remote branch, do
+- git branch -vv: show trancking branch
+
+delete remote branch
+- git push origin --delete serverfix
+
+
+## rebase
+
+
+# todo: frequently used
+
+## branch and remote
+
+basic branch 
+- git branch: list br
+- git branch -r:  list remote br
+- git branch -vv: list br verbose
+- git branch -d 
+
+checkout 
+
+- git checkout
+
+
+------
+
+notes:
+bulk insert, like when reach 1000
+
+card, transaction, customer -> anotherdb.t_transaction_yearmonth
+
+验证数据, 入库的数据和正式环境, 对比
+
+
+
