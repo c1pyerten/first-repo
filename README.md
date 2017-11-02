@@ -609,7 +609,7 @@ basic branch
 
 checkout 
 
-- git checkout
+- git checkout [branch]
 
 
 ------
@@ -623,3 +623,9 @@ card, transaction, customer -> anotherdb.t_transaction_yearmonth
 
 
 
+
+
+----
+notes from home
+
+- git branch -a
