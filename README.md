@@ -328,10 +328,12 @@ two types in shell: 环境变量和 shell 变量
 
 - printenv:  enviroment variable  ==> printenv(show all), printenv USER
 - set: shell variable  ==> set(show all) , echo $SHELL, echo $PS1
-- export:  export path: shell's subprocess can use PATH 
-- alias
+- export:  export path: let shell's subprocess use PATH  ===> In general, the export command marks an environment variable to be exported with any newly forked child processes and thus it allows a child process to inherit all marked variables.
+- alias  
+- source: let bash read changings
 
-command lines stored in $PATH, echo $PATH:  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+variable path:  ':' separeted dir list, when command enters' searching dir   
+command lines dir stored in $PATH, echo $PATH:  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
 
 
 
@@ -350,11 +352,22 @@ all about $PS1 preference
 
 # ch17 network system
 
-- ping
-- traceroute
-- netstat
-- wget
-- ssh(Secure Shell)
+- ping: send a special pack named 'IMCP ECHO_REQUEST' to remote server, server will normally responed immediately
+- traceroute(tracepath): show all network traffic list 
+- netstat: show network configurations and statistics
+- - -a: --all
+- - -s: statistic for each protocol
+- - -l: listening
+- - -p: program
+- - -n: show numberic addresses
+- - -t: active internet connections
+- - -r: route
+- - -v: verbose
+- wget: download from web
+- ssh(Secure Shell): default port 22
+- scp: secure copy, use ssh encryped channel  ==> scp root@remote-server:file .
+- ftp
+- sftp: use ssh encryped channel
 
 ...remains 
 
@@ -596,6 +609,23 @@ delete remote branch
 
 ## rebase
 
+- git rebase [branch]: rebase current branch  ==> (issue) git rebase master : rebase issue to master
+- git rebase [main-branch] [be-rebased]: let main-branch become rebased branch's base (previous commits)  ==> git rebase master hotfix 
+- git rebase --onto [a] [b] [c]:   ==> git rebase --onto master server client
+
+**if one branch is pushde to public repo, don't rebase that branch**
+
+
+# ch6 tools
+
+## stashing
+- git statsh: execute statshing
+- git statsh list
+- git statsh apply:  restore most recent statshing
+- git stash apply stash@{3}: restore to specified stashing number
+
+
+
 
 # todo: frequently used
 
@@ -606,28 +636,11 @@ basic branch
 - git branch -r:  list remote br
 - git branch -vv: list br verbose
 - git branch -d 
+- git branch -a:  means --all
 
 checkout 
 
 - git checkout [branch]
 
-
-------
-
-notes:
-bulk insert, like when reach 1000
-
-card, transaction, customer -> anotherdb.t_transaction_yearmonth
-
-验证数据, 入库的数据和正式环境, 对比
-
-
-
-
-
-----
-notes from home
-
-- git branch -a
-
-servlet
+========
+call grandpas
