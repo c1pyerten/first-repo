@@ -149,7 +149,7 @@ soft(symlink, symbolic): ln -s file link, write to symbolic will also add conten
 # ch6
 all about commands
 - type ==> 
-- which
+- **which** ==> which zsh, which bash, which python
 - man
 - apropos
 - whatis
@@ -161,7 +161,14 @@ all about commands
 - cat － concatenate files and print on the standard output:  read one or more files, concat them and then copy to stdout ===> cat file1 file2 > concat_file.txt
 - sort － sort line    ===>  ls /bin /usr/bin | sort | less
 - uniq － 报道或省略重复行  ===> ls /bin /usr/bin | sort | uniq | less
-- grep －  grep pattern [file...]
+- **grep －  grep [-options..] pattern [file...]:  ===>  grep -rni "shadowsocks" ***
+- - -i: case-insensitive
+- - -n: line with number
+- - -l: list files if matches regexp
+- - -c: calculate number of matched lines
+- - -e: matches multi pattern,  ==> grep -in -e "test" -e "my-shadow" file1 file2
+- - -v: reverse searching, find lines which do not matches
+- - -o: output the matched part only 
 - wc － 打印文件中换行符，字，和字节个数  lines, words, bytes ===> wc file1
 - head － print some first parts: 10 lines for default, -n to specify  ====> head -n 5 file.txt 
 - tail -- print some last parts   ====> tail -n 5 file.txt.  tail -f file : Prints the appended lines on the terminal as the file grows. (like top command)
@@ -192,7 +199,7 @@ echo
 
 - \* spread as wildchar
 - ~ spread to home
-- $(()) suanshu expression
+- $(()) suanshu expression 
 - {} multiple string spread  ===> echo Front-{A,B,C}-Back
 - parameter spread:  echo $USER, echo $SHELL
 
@@ -242,6 +249,9 @@ meta key: usually alt
 - passwd: passwd [user]
 - adduser(useradd)
 - groupadd    
+- usermod: usermod [options..] [username]  ==> usermod -aG wheel xblymmx
+- - -a: append
+- - -G: groups.   ==> -G group1 group2 username
 
 
 ## chmod way 1: octal way 
@@ -378,7 +388,7 @@ all about $PS1 preference
 - locate
 - xargs
 - stat
-- touch
+- touch: change file modified time, or create a file
 
 
 ## find tests
@@ -422,6 +432,14 @@ file
 
 > find ~ -type f -and -name '*.BAK' -and -print
 
+
+
+# ch19 archive and backup 
+- gzip
+- bzip2
+- tar
+- zip
+- rsync
 
 
 
@@ -619,10 +637,11 @@ delete remote branch
 # ch6 tools
 
 ## stashing
-- git statsh: execute statshing
-- git statsh list
-- git statsh apply:  restore most recent statshing
+- git stash: execute statshing
+- git stash list
+- git stash apply:  restore most recent statshing
 - git stash apply stash@{3}: restore to specified stashing number
+- git stash pop
 
 
 
@@ -641,6 +660,71 @@ basic branch
 checkout 
 
 - git checkout [branch]
+- git checkout -b [br] [remote]/[branch] 
 
 ========
+
+# shell
+
+```shell
+item1=some
+item2=other
+item3=ABC
+
+echo "$item1 costs $itme2"
+
+echo "alphabet ${item3}DEFG
+
+arg1=$1
+arg2=$2
+arg_length=$#
+
+``` 
+
+## array
+
+> $() and `` for command line
+
+```shell
+my_array=(apple banana "Fruit Basket" orange)
+
+# set value
+my_array[0]="newly apple value"
+
+# length
+echo ${#my_array[@]}
+
+
+# all array
+echo ${my_array[@]}
+```
+
+## basic operator
+```shell
+# Arithmetic Operator
+# using $(())
+A=3
+B=$(($A * 3))
+
+# string operatpr
+str="some literal string"
+# length
+echo ${#str}
+
+# substring start:len
+${str:3:5}
+${str:3} # start to end
+
+
+
+```
+
+
+
+
+=========
 call grandpas
+
+user: xblymmx pwd: tsmwymsm
+585529
+--registry=https://registry.npm.taobao.org
