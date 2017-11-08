@@ -252,6 +252,7 @@ meta key: usually alt
 - usermod: usermod [options..] [username]  ==> usermod -aG wheel xblymmx
 - - -a: append
 - - -G: groups.   ==> -G group1 group2 username
+- groups(groups [user]): show user groups
 
 
 ## chmod way 1: octal way 
@@ -485,7 +486,14 @@ filename => inode => blocks
 - C-v, then select lines, then [I, A] [words] [Esc]  ======> insert/append to multiple lines
 - C-n, C-p ======> completion
 - /\c case insensitive search   =====> /\cfoo
+- :split or :sp, :vsplit or :vs  ==> open vertial or horizental window
+- <C-w> w|j|k|h|l : switching window
 
+-----
+## terminal && vim switching
+1. :!<commamd>, switch to shell temporarily and run command, then back to vim   ==>  :!ls
+2. <C-z> suspend vim using <C-z>, after doint some shell command, fg to go back to vim
+3. :sh or :!bash or :!zsh  start a new shell, then exit or <C-d> to back to vim 
 
 # Git
 
@@ -645,7 +653,6 @@ delete remote branch
 
 
 
-
 # todo: frequently used
 
 ## branch and remote
@@ -715,9 +722,12 @@ echo ${#str}
 ${str:3:5}
 ${str:3} # start to end
 
-
-
 ```
+
+
+# sp thing
+
+> Usually the content type is application/x-www-form-urlencoded, so the request body uses the same format as the query string: parameter=value&also=another
 
 
 
