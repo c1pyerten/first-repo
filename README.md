@@ -93,7 +93,7 @@ zrange hackers 0 -1
 - less 
 
 ls 
-- -a --alll
+- -a --all
 - -d --directory
 - -h --human-readable
 - -l long 
@@ -471,7 +471,7 @@ filename => inode => blocks
 # random notes
 
 ### find out distribution release:  lsb_release -a
-- /etc/*-release file.
+- **/etc/*-release file.**
 - lsb_release command.  lsb_release -a
 - /proc/version file.
 
@@ -737,4 +737,13 @@ call grandpas
 
 user: xblymmx pwd: tsmwymsm
 585529
---registry=https://registry.npm.taobao.org
+
+- debug line by line, understanding the source code
+- read source code from a former version 
+
+change lan to .0.1
+
+
+pkill -9 -f tomcat
+
+$(command): output command result  ==> ls $(which python)
