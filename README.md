@@ -488,12 +488,25 @@ filename => inode => blocks
 - /\c case insensitive search   =====> /\cfoo
 - :split or :sp, :vsplit or :vs  ==> open vertial or horizental window
 - <C-w> w|j|k|h|l : switching window
+- 5itxt [ESC]: repeatly texting:  ===>  txttxtxttxttxt
 
------
 ## terminal && vim switching
 1. :!<commamd>, switch to shell temporarily and run command, then back to vim   ==>  :!ls
 2. <C-z> suspend vim using <C-z>, after doint some shell command, fg to go back to vim
 3. :sh or :!bash or :!zsh  start a new shell, then exit or <C-d> to back to vim 
+
+## vim replace
+> :[addr]s/src/dist/[option]
+
+examples: 
+- %s/src/dist/g
+- 1,20s/src/dist/g: replacing 1 ~ 20 line
+- .,$s/src/dist/g: current line to end file
+
+- addr: range, % is all
+
+
+
 
 # Git
 
@@ -731,9 +744,7 @@ ${str:3} # start to end
 
 
 
-
 =========
-call grandpas
 
 user: xblymmx pwd: tsmwymsm
 585529
@@ -747,3 +758,14 @@ change lan to .0.1
 pkill -9 -f tomcat
 
 $(command): output command result  ==> ls $(which python)
+
+
+# spacemacs
+
+- spc w: window 
+- spc 1, 2, 3: switching windows
+- spc b s: start a scratch buffer, which can be delete without saved
+- spc w d: delete that window
+- spc f f: open file     spc f r: recent,  spc f s: save
+
+
